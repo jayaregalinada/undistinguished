@@ -1,0 +1,452 @@
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>{Title}</title>
+    <!-- EDIT CONTENT -->
+    <meta name="text:username" content="" />
+    <!-- STOP HERE -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="{MetaDescription}" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="apple-touch-icon" href="{PortraitURL-128}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="{MetaDescription}" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script:400,700" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" />
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.sfm.pw/foundation/css/foundation.css" /> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome.min.css">
+    <!--[if IE 7]><link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/3.2.1/css/font-awesome-ie7.min.css"><![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/dpiqlxf/ni6mr4egz/style_1.2.css" />
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/modernizr/2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/dpiqlxf/pxrmr4ekz/jquery.photoset-grid.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/colorbox/1.4.4/jquery.colorbox-min.js"></script>
+
+    <!-- <script type="text/javascript" src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script> -->
+</head>
+<body>
+
+    <!-- | BANNER AREA | -->
+    <div id="banner_top">
+        <div class="row">
+            <!-- ><div class="small-4 text-center large-2 columns banner large-centered small-centered">
+                <img src="//cdn.sfm.pw/images/nay/banner_001.png" alt="banner">
+            </div> -->
+            <h1 class="title text-center hide-for-small font_DancingScript">{Title}</h1>
+            <div class="show-for-small _afterLittle"></div>
+            <p class="text-center bullets hide-for-small">&bull; &bull; &bull;</p>
+
+
+            <nav class="top-bar sticky navigation">
+                <ul class="title-area">
+                    <li class="name show-for-small text-center">
+                        <a href="#" class="font_DancingScript">{Title}</a>
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+                </ul>
+
+                <section class="top-bar-section font_UbuntuMono">
+
+                    <ul class="left navigations">
+
+                        <li class="navi active home text-center">
+                            <a href="{block:PermalinkPage}/{/block:PermalinkPage}#">HOME</a>
+                        </li>
+
+                        <li class="show-for-small divider"></li>
+
+                        <li class="navi about text-center">
+                            <a href="#about" title="ABOUT ME!" data-reveal-id="about-form">ABOUT</a>
+                        </li>
+
+                        <li class="show-for-small divider"></li>
+
+                        {block:AskEnabled}
+                        <li class="navi ask text-center">
+                            <a href="#ask" title="{AskLabel}" data-reveal-id="ask-form">ASK</a>
+                        </li>
+
+                        <li class="show-for-small divider"></li>
+                        {/block:AskEnabled}
+
+                        {block:SubmissionsEnabled}
+                        <li class="navi submit text-center">
+                            <a href="#submit" title="{SubmitLabel}" data-reveal-id="submit-form">SUBMIT</a>
+                        </li>
+                        <li class="show-for-small divider"></li>
+                        {/block:SubmissionsEnabled}
+
+                        <li class="navi archive text-center">
+                            <a href="#archive">ARCHIVE</a>
+                        </li>
+                    </ul>
+
+                </section>
+            </nav>
+
+        </div>
+    </div>
+    <!-- | /BANNER AREA | -->
+
+    <!-- | POSTS | -->
+    <div class="posts row">
+
+        <!-- <div class="autopagerize_page_element"> -->
+        {block:Posts}
+
+        {block:Text}
+        <article class="post text columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="text" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            {block:Title}
+            <header><h1 class="title">{Title}</h1></header>
+            {/block:Title}
+            <section class="body">{Body}</section>
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-pencil"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Text}
+
+        {block:Photoset}
+        <article class="post photoset columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photoset" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+
+            <section class="photos photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+                {block:Photos}
+                <img src="{PhotoURL-500}" {block:Caption} data-title="{Caption}"{/block:Caption} data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif}{block:Camera} data-camera="{Camera}"{/block:Camera}{block:Aperture} data-aperture="{Aperture}"{/block:Aperture}{block:Exposure} data-exposure="{Exposure}"{/block:Exposure}{block:FocalLength} data-focallength="{FocalLength}"{/block:FocalLength}{/block:Exif} />
+                {/block:Photos}
+            </section>
+            {block:Caption}
+            <section class="body">{Caption}</section>
+            {/block:Caption}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-camera"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Photoset}
+
+        {block:Photo}
+        <article class="post photo columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+
+            <section class="photo">
+                <img src="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif}{block:Camera} data-camera="{Camera}"{/block:Camera}{block:Aperture} data-aperture="{Aperture}"{/block:Aperture}{block:Exposure} data-exposure="{Exposure}"{/block:Exposure}{block:FocalLength} data-focallength="{FocalLength}"{/block:FocalLength}{/block:Exif} />
+            </section>
+            {block:Caption}
+            <section class="body">{Caption}</section>
+            {/block:Caption}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-camera"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Photo}
+
+        {block:Panorama}
+        <article class="post panorama columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+
+            <section class="photo">
+                <img src="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}"{block:Exif}{block:Camera} data-camera="{Camera}"{/block:Camera}{block:Aperture} data-aperture="{Aperture}"{/block:Aperture}{block:Exposure} data-exposure="{Exposure}"{/block:Exposure}{block:FocalLength} data-focallength="{FocalLength}"{/block:FocalLength}{/block:Exif} />
+            </section>
+            {block:Caption}
+            <section class="body">{Caption}</section>
+            {/block:Caption}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-camera"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Panorama}
+
+        {block:Quote}
+        <article class="post quote columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            <header><h1 class="quotation {Length} font_DancingScript">{Quote}</h1></header>
+            {block:Source}
+            <section class="body">{Source}</section>
+            {/block:Source}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-quote-left"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Quote}
+
+        {block:Link}
+        <article class="post link columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            <a href="{URL}" target="{Target}" title="{Name}">
+                <div class="url text-center"><i class="icon-long-arrow-right"></i> {Name}</div>
+            </a>
+            {block:Description}
+            <section class="body">{Description}</section>
+            {/block:Description}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-external-link"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Link}
+
+        {block:Chat}
+        <article class="post chat columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            {block:Title}
+            <header><h1 class="title">{Title}</h1></header>
+            {/block:Title}
+            <section class="lines body"><ul class="no-bullet">
+                {block:Lines}
+                <li class="{Alt}"{block:Label} data-label="{Label}"{/block:Label} data-number="{UserNumber}">
+                    {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
+                </li>
+                {/block:Lines}
+            </ul></section>
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-comment"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Chat}
+
+        {block:Audio}
+        <article class="post audio columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}{block:ExternalAudio} data-xaudio="{ExternalAudioURL}"{/block:ExternalAudio} data-raw="{RawAudioURL}"{block:PlayCount} data-count="{PlayCount}"{/block:PlayCount}>
+            {block:AudioEmbed}
+            <section class="audio-embed">
+                {AudioEmbed}
+            </section>
+            {/block:AudioEmbed}
+
+            {block:Caption}
+            <section class="body">{Caption}</section>
+            {/block:Caption}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-music"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Audio}
+
+        {block:Video}
+        <article class="post video columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            <section class="video-embed flex-video">
+                {Video-250}
+            </section>
+            {block:Caption}
+            <section class="body">
+                {Caption}
+            </section>
+            {/block:Caption}
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-link"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Video}
+
+        {block:Answer}
+        <article class="post answer columns large-9 small-11 large-centered small-centered{block:PermalinkPage} permalink-page{/block:PermalinkPage}" data-posttype="photo" data-postid="{PostID}" data-tags="{TagsAsClasses}" id="post_{PostID}" data-reblog="{ReblogURL}" {block:RebloggedFrom} data-rebloggedparentname="{ReblogParentName}" data-rebloggedparenturl="{ReblogParentURL}" data-rebloggedrootname="{ReblogRootName}" data-rebloggedrooturl="{ReblogRootURL}"{/block:RebloggedFrom}>
+            <section class="question">
+                <img src="{AskerPortraitURL-48}" alt="asker" />
+                <p><span class="asker">{Asker}</span><span class="asked-word"> asked:</span> {Question}</p>
+            </section>
+            <section class="body">
+                {Answer}
+            </section>
+            <section class="footer">
+                {block:HasTags}
+                <div class="hasTags">
+                    <ul class="no-bullet tags text-center">
+                        {block:Tags}<li><a href="{TagURLChrono}" target="_blank" title="{Tag}">#{Tag}</a></li>{/block:Tags}
+                    </ul>
+                </div>
+                {/block:HasTags}
+                <div class="permalinks"{block:PermalinkPage} data-magellan-expedition="fixed" data-magellan-destination="notes"{/block:PermalinkPage}>
+                    <ul class="no-bullet contents inline-lists">
+                        <li class="icon"><i class="icon-link"></i></li>
+                        <li class="permalink"><a href="{ShortURL}"{block:NoteCount} title="{NoteCountWithLabel}" class="has-top tip-top" data-tooltip {/block:NoteCount}>{TimeAgo}</a></li>
+                        <li class="like-button pull-right has-top tip-top" data-tooltip title="Like Me!">{LikeButton size="20" color="white"}</li>
+                        <li class="reblog-button pull-right has-top tip-top" data-tooltip title="Reblog Me!">{ReblogButton size="20" color="white"}</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+        {/block:Answer}
+
+        {block:PostNotes}
+        <section data-magellan-arrival="notes" class="section-notes columns large-8 small-11 large-centered small-centered">{PostNotes}</section>
+        {/block:PostNotes}
+        {/block:Posts}
+        <!-- </div> -->
+
+    </div>
+    <!-- | /POSTS | -->
+
+    {block:Pagination}
+    <div class="pagination-centered">
+        <ul class="pagination">
+            <li class="arrow previous"><a href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}#">&laquo;</a></li>
+
+            {block:JumpPagination length=9}
+                {block:CurrentPage}
+                    <li class="current"><a href="">{PageNumber}</a></li>
+                {/block:CurrentPage}
+
+                {block:JumpPage}
+                    <li class="jump-page"><a href="{URL}">{PageNumber}</a></li>
+                {/block:JumpPage}
+
+
+
+            {/block:JumpPagination}
+            <li class="unavailable"><a href="">&hellip;</a></li>
+            <li class="total-pages"><a href="/page/{TotalPages}">{TotalPages}</a></li>
+
+            <li class="arrow next"><a href="{block:NextPage}{NextPage}{/block:NextPage}#">&raquo;</a></li>
+        </ul>
+    </div>
+    {/block:Pagination}
+    <!-- ASK MODAL -->
+    <div id="ask-form" class="reveal-modal medium">
+        <h2 class="text-center font_DancingScript">{AskLabel}</h2>
+        <iframe src="http://www.tumblr.com/ask_form/{text:username}.tumblr.com" frameborder="none" scrolling="no"></iframe>
+    </div>
+
+    <div id="about-form" class="reveal-modal large">
+        <!-- DESCRIPTION MODAL -->
+        {Description}
+    </div>
+    {block:SubmissionsEnabled}
+    <div id="submit-form" class="reveal-modal large">
+        <h2 class="text-center font_DancingScript">{SubmitLabel}</h2>
+        <iframe src="http://www.tumblr.com/submit_form/{text:username}.tumblr.com" frameborder="none" scrolling="no"></iframe>
+    </div>
+    {/block:SubmissionsEnabled}
+
+    <div class="copyright font_UbuntuMono">
+        Copyright {CopyrightYears}<br />Theme by <a href="http://undistinguished.tumblr.com" target="_blank">undistinguished</a>
+    </div>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js"></script>
+    <script type="text/javascript">$(document).foundation();</script>
+
+    <!-- <script type="text/javascript" src="//cdn.sfm.pw/js/2013/7/nay_8_000.js?v=1.1"></script> -->
+    <script type="text/javascript" src="http://static.tumblr.com/dpiqlxf/gaamqrdl1/001.min.js"></script>
+</body>
+</html>

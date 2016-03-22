@@ -1,10 +1,14 @@
-#Tumblr Themes
+# Tumblr Themes
 ##### This tumblr theme is specially made for [My tumblr Blog](http://undistinguished.tumblr.com)
 
 * * *
 
 
 ## Recent works
- - [Dancing Script](/blob/master/Dancing Script/template.html)
+ - [Dancing Script](/Dancing Script/template.html)
+ - 
+ 
+* * *
+###### CREATED AND DEVELOPED BY JAYAREGALINADA
 
 
